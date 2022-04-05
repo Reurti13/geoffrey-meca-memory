@@ -61,7 +61,7 @@ function afficherTableau(){
 }
 
 function getImage(valeur){
-    var imgTxt = "pictures/image/";
+    var imgTxt = "./public/pictures/image/";
 
     switch(valeur){
         case 1 : imgTxt += "Anni.jfif";

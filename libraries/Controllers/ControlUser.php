@@ -13,7 +13,6 @@ class ControlUser extends Controller
     // Affiche la Page Home
     public function homePage()
     {
-
         $title = 'Home';
         session_start();
         @$idUser = $_SESSION['id'];
@@ -21,10 +20,7 @@ class ControlUser extends Controller
         $persoManager = new PersonnagesManager();
         @$userInfo = $userManager->reqUserById();
 
-        $fokemons = $persoManager->countPersoByUser($idUser);
-        $nbrsFokemon = $fokemons->fetchColumn();
-
-        \Renderer::render('views/homeView', compact('title', 'userInfo', 'fokemons', 'nbrsFokemon'));
+        \Renderer::render('views/homeView', compact('title', 'userInfo'));
     }
 
     // Affiche la Page Mes infos
@@ -38,9 +34,8 @@ class ControlUser extends Controller
 
         @$userInfo = $userManager->reqUserById();
         $manager = new PersonnagesManager();
-        $fokemon = $manager->reqPersoByUser($idUser);
 
-        \Renderer::render('views/readUserView', compact('title', 'userInfo', 'fokemon'));
+        \Renderer::render('views/readUserView', compact('title', 'userInfo'));
     }
 
     // Affiche la Page Mon profil

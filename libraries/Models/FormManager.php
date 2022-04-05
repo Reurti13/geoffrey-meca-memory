@@ -28,7 +28,7 @@ class FormManager extends Manager
         $insertMbr->execute(array($pseudo, $age, $pass, $mail, $key));
     }
 
-    public function verifForm()
+    public function verifForm() // Inscription
     {
         $form = new FormManager($_POST);
         session_start();

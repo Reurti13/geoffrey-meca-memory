@@ -16,22 +16,13 @@
                 <img src="membres/Avatars/<?= $userInfo['avatar'] ?>" width="150px" />
             <?php   } elseif (empty($avatar)) { ?>
                 <img src=" ./membres/Avatars/Neutre.jpg" width="150px" />
-                <?php   }
+            <?php   }
 
             if (isset($_SESSION['id']) and $userInfo['id'] == $_SESSION['id']) {
-                if ($nbrsFokemon == 0) { ?>
-
-                    <div>
-                        <p>Vous n'avez pas de personnages !</p>
-                    </div>
-                <?php   } else { ?>
-                    <div>
-                        <p>Nombre de Fokémons : <?= $nbrsFokemon ?> </p>
-                    </div>
-                <?php   } ?>
+            ?>
 
                 <div><a href="./index.php?controller=ControlUser&task=editPage">Editer mon profil</a></div>
-                <div><a href="./index.php?controller=Fokemon&task=memoryPage">Jouer</a></div>
+                <div><a href="./index.php?controller=ControlApp&task=memoryPage">Jouer</a></div>
                 <div><a href="./index.php?controller=ControlApp&task=logOut">Se déconnecter</a></div>
                 <?php if ($userInfo['confirmation'] != 1) { ?>
                     <a href="./index.php?controller=ControlApp&task=confirmPage">Confirmer votre compte</a>

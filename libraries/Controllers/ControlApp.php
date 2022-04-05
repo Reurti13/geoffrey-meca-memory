@@ -14,7 +14,6 @@ class ControlApp
     // Affiche la page d'Accueil
     public function accueil()
     {
-
         $title = "Accueil";
 
         \Renderer::render('views/accueil', compact('title'));
@@ -23,7 +22,6 @@ class ControlApp
     // Affiche la Page Inscription et gère le Formulaire Inscription
     public function inscriptionPage()
     {
-
         $title = 'Inscription';
         session_start();
         // On instancie les classes Form et FormManager
@@ -40,7 +38,6 @@ class ControlApp
     // Affiche la Page du resultat de l'Inscription
     public function resultInscrPage()
     {
-
         $title = 'ResultInscription';
         session_start();
 
@@ -55,7 +52,6 @@ class ControlApp
     // Affiche la Page Login
     public function loginPage()
     {
-
         $title = 'Login';
         session_start();  // démarrage d'une session
         $form = new Form($_POST);
@@ -68,7 +64,6 @@ class ControlApp
     // Affiche la Page de confirmation du compte
     public function confirmPage()
     {
-
         $title = 'Confirmation Compte';
         session_start();
         $confirmManager = new FormManager();
@@ -81,26 +76,16 @@ class ControlApp
         \Renderer::render('views/confirmView', compact('title', 'pseudo'));
     }
 
-    // Affiche la Page Inscription et gère le Formulaire Inscription
+    // Affiche la Page du jeu Memory
     public function memoryPage()
     {
-
         $title = 'Jeu';
         session_start();
-        // On instancie les classes Form et FormManager
-        // On récupère les données de la méthode post du formulaire
-        $form = new Form($_POST);
-        $formManager = new FormManager($_POST);
-        // On fait appel a la méthode verifForm() de la classe FormManager
-        // On récupère les erreurs de la méthode verifForm dans $error
-        @$error = $formManager->verifForm();
-        // On indique la vue et on lui retourne les informations dont elle a besoin
         \Renderer::render('views/memory', compact('title'));
     }
     // Déconnexion
     public function logOut()
     {
-
         session_start();
         $_SESSION = array();
         session_destroy();
