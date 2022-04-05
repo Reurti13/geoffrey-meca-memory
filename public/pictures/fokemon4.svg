@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1248.8391"
+   height="597.14288"
+   viewBox="0 0 1248.8391 597.14288"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="fokemon2.svg"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)">
+  <defs
+     id="defs833" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="668.16715"
+     inkscape:cy="289.58372"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata836">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-5.8003221,167.56939)">
+    <path
+       d="M 84.834097,391.19832 57.756142,173.05164 42.171204,177.9785 39.372277,108.79689 174.7136,71.287157 l 7.99637,62.911773 -76.69391,22.92628 5.51629,45.14081 57.56194,-16.68665 7.10665,52.02495 -58.27965,19.08335 17.16644,130.40368 q -4.0245,1.05954 -13.57194,3.00882 -9.53557,2.09443 -17.58977,2.75266 -12.705212,1.03833 -19.091923,-1.65451 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:263.68px;line-height:1.25;font-family:'Pokemon Solid';-inkscape-font-specification:'Pokemon Solid';letter-spacing:6.04267px;fill:#ffcc00;fill-opacity:1;stroke:#0000ae;stroke-width:12.4687;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path857" />
+    <path
+       d="m 327.26137,65.293395 q 31.47771,20.777373 39.80491,63.965625 2.86764,14.87279 2.57553,31.39308 -0.20793,16.35574 -3.34624,31.94156 -3.13831,15.58583 -8.11258,28.26252 -8.15016,20.85357 -17.20731,35.80073 -8.94538,14.92562 -19.02422,25.17507 -10.1064,10.10645 -20.2577,15.77184 -10.15129,5.66539 -20.5449,7.6694 -24.13996,4.65446 -46.89634,-8.16343 -15.39345,-8.89788 -28.79816,-31.52838 -13.29296,-22.65205 -18.66979,-50.53852 -8.63051,-44.76135 7.35037,-81.5122 9.38098,-21.68416 20.93025,-39.336697 11.54929,-17.652537 25.34521,-29.063668 13.76834,-11.554137 29.86166,-14.657115 26.48692,-5.106986 56.98931,14.820185 z m -14.90259,41.140965 q 0.85304,16.44781 -3.95139,28.20182 -4.80444,11.754 -12.06879,13.15465 -4.58212,0.88349 -8.78967,-2.90328 -2.22933,-1.94335 -4.34102,-6.28255 -1.99995,-4.36076 -2.82716,-8.65099 -1.68198,-8.72346 0.71451,-17.93665 2.48068,-9.37773 10.20818,-17.393941 -10.72888,2.068653 -17.08769,9.969291 -6.27463,7.73607 -7.94835,18.29313 -1.67372,10.55708 0.36672,21.13963 3.19853,16.58887 12.28711,22.84598 10.9841,7.67152 20.14835,5.90455 11.28768,-2.1764 16.51744,-16.53391 5.22976,-14.35752 1.56249,-33.37752 -1.70956,-8.86647 -4.79073,-16.43021 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:263.68px;line-height:1.25;font-family:'Pokemon Solid';-inkscape-font-specification:'Pokemon Solid';letter-spacing:19.5838px;fill:#ffcc00;fill-opacity:1;stroke:#0000ae;stroke-width:12.4687;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path859" />
+    <path
+       d="m 352.82902,9.5667724 56.30955,-33.6845704 2.22801,47.718431 28.7478,-43.186903 41.06014,39.927526 -50.98721,106.190334 121.76821,109.05931 5.45252,58.21129 -122.07933,-76.67713 6.17756,71.29945 -54.05708,3.83615 -22.03135,-252.226232 -16.48881,5.581279 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:263.68px;line-height:1.25;font-family:'Pokemon Solid';-inkscape-font-specification:'Pokemon Solid';letter-spacing:38.8105px;fill:#ffcc00;fill-opacity:1;stroke:#0000ae;stroke-width:12.4687;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path861" />
+    <path
+       d="m 588.75088,197.61146 135.20021,7.13644 -1.03108,63.20841 -188.043,-10.63183 -10.43967,-219.627407 -18.04388,3.64104 3.22212,-69.17971 156.20843,-26.361109 3.22212,63.354059 -88.67277,16.60313 2.06216,45.44014 87.64169,-16.74877 3.22212,52.430947 -88.67277,19.07904 z m -36.86107,-288.807109 68.56674,-42.818601 29.51463,51.265809 -83.3885,17.913904 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:263.68px;line-height:1.25;font-family:'Pokemon Solid';-inkscape-font-specification:'Pokemon Solid';letter-spacing:48.4788px;fill:#ffcc00;fill-opacity:1;stroke:#0000ae;stroke-width:13.2684;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path863" />
+    <path
+       d="m 723.64046,-7.9988084 66.75131,0.093884 13.73184,42.0984104 20.83734,-54.476973 43.03571,2.602192 18.74509,337.416885 -77.21194,-18.32942 -3.35512,-114.8109 -19.48894,40.43899 -15.77424,-54.73901 -15.96107,95.53331 -76.71202,0.48094 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:263.68px;line-height:1.25;font-family:'Pokemon Solid';-inkscape-font-specification:'Pokemon Solid';letter-spacing:14.42px;fill:#ffcc00;fill-opacity:1;stroke:#0000ae;stroke-width:15.5377;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path865" />
+    <path
+       d="m 1054.9131,106.80866 q 24.3096,28.83729 20.0721,72.61641 -1.4593,15.07626 -6.4154,30.83831 -4.8288,15.62805 -12.2502,29.68825 -7.4214,14.0602 -15.7803,24.81057 -13.7194,17.69395 -26.6369,29.46631 -12.8041,11.78334 -25.37183,18.76091 -12.5537,6.83262 -23.89348,9.39307 -11.33969,2.56046 -21.87553,1.54067 -24.47023,-2.36853 -42.668,-21.10332 -12.24548,-12.89104 -18.69661,-38.39022 -6.33786,-25.48822 -3.60173,-53.75621 4.39183,-45.37374 30.1213,-76.09845 15.13492,-18.14222 31.2084,-31.80393 16.07339,-13.661729 32.535,-20.701378 16.47565,-7.184612 32.78918,-5.605591 26.8493,2.598809 50.464,30.344599 z m -25.9379,35.24051 q -3.8372,16.01667 -11.772,25.93016 -7.9349,9.91348 -15.2986,9.20072 -4.64488,-0.44958 -7.60855,-5.27242 -1.58811,-2.49488 -2.38523,-7.25434 -0.68388,-4.7485 -0.26294,-9.09743 0.85592,-8.8428 5.76215,-17.00092 5.03347,-8.29212 14.71387,-13.79331 -10.8756,-1.05267 -19.2106,4.72506 -8.20765,5.64373 -12.80103,15.29535 -4.59339,9.65163 -5.63171,20.37897 -1.62765,16.81582 5.31824,25.38952 8.36357,10.4668 17.65319,11.36596 11.44211,1.10751 20.52181,-11.18264 9.0796,-12.29015 10.9458,-31.57037 0.87,-8.98776 0.056,-17.11431 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:263.68px;line-height:1.25;font-family:'Pokemon Solid';-inkscape-font-specification:'Pokemon Solid';letter-spacing:13.9531px;fill:#ffcc00;fill-opacity:1;stroke:#0000ae;stroke-width:12.4687;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path867" />
+    <path
+       d="m 1141.2458,58.28067 17.0328,99.61437 5.0246,-88.354112 69.7229,12.800473 -40.5078,324.305209 -42.1159,-1.84184 -22.4108,-159.36601 -15.6782,126.76499 -53.7571,-5.863 29.8112,-277.674439 -18.6358,-8.462123 3.8994,-36.798132 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:263.68px;line-height:1.25;font-family:'Pokemon Solid';-inkscape-font-specification:'Pokemon Solid';letter-spacing:6.04267px;fill:#ffcc00;fill-opacity:1;stroke:#0000ae;stroke-width:12.4687;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path869" />
+  </g>
+</svg>

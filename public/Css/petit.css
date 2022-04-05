@@ -1,0 +1,255 @@
+/*
+ style smartphones et petites tablettes en portrait*/
+/***********************************NAVBAR**************************/
+.logo{
+    width: 70%;
+}
+.navbar_links {
+    align-items: start;
+    justify-content: initial;   
+    flex-direction: column;
+    position: absolute;
+    top: 0%;
+    right: 0;
+    width: 0;
+    padding-top: 20%;
+    background: var(--navbar-bg-color);
+    transform: translateX(110%);
+    transition: all .5s ease-in-out;
+    z-index: 1;
+}
+.navbar_link {
+    transform: translateX(101%);
+    transition: all .5s ease-in-out;
+}
+.open-nav .navbar_links {
+    background-color: #487dbeb2; 
+    width: 100%;
+    height: 100%;
+    transform: translateX(0);
+}
+.open-nav .navbar_link {
+    transform: translateX(0);
+}
+.navbar_link > a {
+    display: block;
+    padding: 1rem;
+    font-size: 40px;
+    color: wheat;
+    transition: all .4s ease-in-out;
+}
+.navbar_link > a:hover {
+    padding-left: 2rem;
+    letter-spacing: 10px;
+}
+/**********************toggle menu*/
+.burger {
+    display: block;
+    position: relative;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1;
+}
+.bar {
+    display: block;
+    width: 45px;
+    height: 4px;
+    background: var(--navbar-color);
+    border-radius: 3px;
+    transition: all .5s ease-in-out;
+}
+.bar::before, .bar::after {
+    content: "";
+    width: 45px;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    background: var(--navbar-color);
+    border-radius: 3px;
+    transition: all .5s ease-in-out;
+}
+.open-nav .bar {
+    width:0;
+    background:transparent;    
+}
+.bar::before {
+    transform: translateY(-12px);
+}
+.open-nav .bar::before {
+    transform: rotate(45deg);   
+}
+.bar::after {
+    transform: translateY(12px);
+}
+.open-nav .bar::after {
+    transform: rotate(-45deg);   
+}
+/************************bonus animation sur mobile*/
+.open-nav .un {
+    transition: all 1s ease-out;
+    font-family: 'Times New Roman';
+}
+.open-nav .deux {
+    transition: all 1.2s ease-out;
+}
+.open-nav .trois {
+    transition: all 1.3s ease-out;
+}
+.open-nav .quatre {
+    transition: all 1.4s ease-out;
+}
+.open-nav .cinq {
+    transition: all 1.5s ease-out;
+}
+/*********************************Pour le corp et le blog */
+html{
+    overflow: auto;
+}
+h2{
+    font-size: 7vw;
+    text-align: center;
+    margin-bottom: 7%;
+}
+h3{
+    font-size:5vw;
+}
+a{
+    font-size: 5vw;
+}
+p{
+    font-size: 8vw;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+.date{
+    font-size: 4vw;
+    padding-right: 7%;
+}
+/*----------------------------------------ACCUEIL---------------------------------------------*/
+.eclair{
+    right:11%;
+}
+.titre{
+    width: 80%;
+    top: 10%;
+}
+@keyframes pika-ascent{
+    0%  {   visibility:hidden;  }
+    50% {   visibility:visible;
+            bottom:6%;          }
+    60% {   visibility:visible;
+            bottom:7%;          }
+    70% {   visibility:visible;
+            bottom:8%;          }
+    100%{   visibility:visible;
+            bottom:20%;          }
+}
+.pikachu{
+    width: 60%;
+    right: 17%;
+}
+.dracaufeu{
+    display: none;
+}
+.mewtwo{
+    display: none;
+}
+.flamme{
+    display: none;
+} 
+.go_fight{
+    height: 30%;
+}
+.go_fight img{
+    width: 80%;
+}
+.bulbi{
+    display: none;
+}
+.salam{
+    display: none;
+}
+.pig1{
+    display: none;
+}
+.pig2{
+    display: none;
+}
+.tornade{
+    display: none;
+}
+.tornade2{
+    display: none;
+}
+.dugtrio1{
+    display: none;
+}
+.arbok{
+    display: none;
+}
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXX BIRDS XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+.animRoucool1 img, .animRoucool2 img, .animRoucool3 img{
+    height:45px;
+}
+/*-----------------------------------FORMULAIRE------------------------------------------------------*/
+.formCreation{
+    width: 95%;
+}
+.form-edit, .form-login{
+    width: 95%;
+}
+.form-login button, .form-edit button{
+    font-size: 5vw;
+}
+form{
+    font-size: 8vw;
+    width: 100%;
+}
+strong{
+    font-size: 7vw;
+}
+form p{
+    width: 100%;
+    font-size: 6vw;
+}
+input, textarea{
+    font-size: 6vw;
+}
+td{
+    text-align: center;
+}
+button{
+    font-size: 5vw;
+}
+/*-----------------------------------PERSO------------------------------------------------------*/
+.conteneurPerso a{
+    font-size: 4vw;
+}
+.listepersonnage { /* class pour la liste du choix des personnages (createPersoPage)*/
+    width: 35%;
+}
+/*-----------------------------------BLOG------------------------------------------------------*/
+.news p{
+    font-size: 5vw;
+}
+.news h3{
+    font-size:5vw;
+}
+.liste-comm{
+    margin: 0 auto;
+    width: 80%;
+}
+.scroll{
+    top:10%;
+}
+/***********************************FOOTER**************************/
+footer{
+    font-size: 1.2vw;
+}
+.bloc:nth-child(1), .bloc:nth-child(2), .bloc:nth-child(3), .bloc:nth-child(4){
+    align-items: center;
+}

@@ -1,3 +1,16 @@
+/***************************************************Menu Burger********************************** */ 
+function toggleMenu()
+{
+  const navbar = document.querySelector('.navbar');
+  const burger = document.querySelector('.burger');
+  burger.addEventListener('click', () => {
+    navbar.classList.toggle('open-nav');
+  });
+}
+toggleMenu();
+
+/***************************************************Jeu Memory********************************** */ 
+
 const divJeu = document.querySelector("#jeu");
 const divCount = document.querySelector("#count");
 const divDeCount = document.querySelector("#decount");
@@ -48,7 +61,7 @@ function afficherTableau(){
 }
 
 function getImage(valeur){
-    var imgTxt = "image/";
+    var imgTxt = "pictures/image/";
 
     switch(valeur){
         case 1 : imgTxt += "Anni.jfif";
@@ -165,4 +178,3 @@ function gameOver(){
 function rejouer(){
 	location.reload();
 }
-

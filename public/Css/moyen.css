@@ -1,0 +1,101 @@
+/*****************Style petites-moyennes tablettes */
+
+/*********************************************NAVBAR*/
+.navbar{
+    margin-right: 2%;
+    margin-left: 2%;
+}
+/***********************************FORM**************************/
+html{
+    overflow: auto;
+}
+h2{
+    font-size: 250%;
+    margin: 0 auto;
+    margin-top: 6%;
+    margin-bottom: 10%;
+}
+h3{
+    font-size:3vw;
+}
+p{
+    font-size: 190%;
+    margin-bottom: 2%;
+}
+input{
+    font-size: 100%;
+}
+textarea{
+    font-size: 107%;
+}
+form button{
+    width: 40%;
+    font-size: 100%;
+}
+.news2{
+    display: none;
+}
+.commantaires > p{
+    font-size: 270%;
+}
+/***********************************Accueil**************************/
+.eclair{
+    right:25%;
+}
+.titre{
+    width: 80%;
+    top: 10%;
+}
+@keyframes pika-ascent{
+    0%  {   visibility:hidden;  }
+    50% {   visibility:hidden;  }
+    60% {   visibility:visible;
+            bottom:17%; }
+    70% {   visibility:visible;
+            bottom:18%; }
+    100%{   visibility:visible;
+            bottom:20%; }
+}
+.pikachu{
+    bottom:20%;
+    width: 30%;
+    right: 32%;
+}
+.dracaufeu{
+    display: none;
+}
+.mewtwo{
+    display: none;
+}
+.flamme{
+    display: none;
+}    
+.go_fight{
+    height: 30%;
+}
+.go_fight img{
+    width: 80%;
+}
+.tornade{
+    position: absolute;
+    width: 50px;
+    bottom:45%;
+    left: 20%;
+}
+.tornade2{
+    position: absolute;
+    width: 35px;
+    bottom:45%;
+    left: 27%;
+}
+.dugtrio1{
+    display: none;
+}
+/***********************************FOOTER**************************/
+footer{
+    font-size: 1.1vw;
+}
+.bloc:nth-child(1), .bloc:nth-child(2), .bloc:nth-child(3), .bloc:nth-child(4){
+    align-items: center;
+} 
+/***********************************FOOTER**************************/
