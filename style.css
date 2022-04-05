@@ -1,0 +1,12 @@
+.conteur{
+    color: red;
+    font-size: 5vw;
+}
+.deConteur{
+    color: red;
+    font-size: 5vw;
+}
+.tapis{
+   border: 3px solid black;
+   display: inline-block;
+}
