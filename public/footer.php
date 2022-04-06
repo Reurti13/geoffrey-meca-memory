@@ -7,13 +7,13 @@
                 <li>supportclient@contact.com</li>
                 <li>6 rue de l'invention, Marsseille 13012</li>
             </ul>
-        </div>  
+        </div>
 
         <div class="bloc footer-medias">
             <ul class="liste-medias">
-                <li><a href="#"><i class="fab fa-facebook"></i>Facebook/monsite</a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i>Linkedin/monsite</a></li>
                 <li><a href="#"><i class="fab fa-instagram"></i>Instagram/stuff</a></li>
-                <li><a href="#"><i class="fab fa-github"></i>Github/HelloWorld</a></li>
+                <li><a href="#"><i class="fab fa-github"></i>Github/Reurti13</a></li>
             </ul>
         </div>
     </div>

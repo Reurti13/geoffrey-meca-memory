@@ -33,7 +33,7 @@
     <?php  } else { ?>
         <div class="carte_acces">
             <p>L'accès à cette page est réservé aux utilisateurs authentifiés</p>
-            <a href="./index.php?controllers=ControllerApp&task=loginPage">Se connecter</a>
+            <a href="./index.php?controller=ControlApp&task=loginPage">Se connecter</a>
         </div>
     <?php
     } ?>

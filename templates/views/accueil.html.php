@@ -40,20 +40,15 @@
 <div class="go_fight">
     <div class="bloc footer-medias">
         <ul class="liste-medias">
-            <li><a href="#"><i class="fab fa-facebook"></i>Facebook/monsite</a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i>Instagram/stuff</a></li>
-            <li><a href="#"><i class="fab fa-github"></i>Github/HelloWorld</a></li>
+            <li><a href="https://github.com/Reurti13"><i class="fab fa-github"></i>Github/Reurti13</a></li>
         </ul>
     </div>
 
     <a href="index.php?controller=controlApp&task=inscriptionPage"><img src="./public/pictures/start.svg" alt="startGame"></a>
-    
-    <div class="bloc footer-contact">
-        <h3>Restons en contact</h3>
-        <ul class="liste-contact">
-            <li>06-55-55-55-55</li>
-            <li>supportclient@contact.com</li>
-            <li>6 rue de l'invention, Marsseille 13012</li>
+
+    <div class="bloc footer-medias">
+        <ul class="liste-medias">
+            <li><a href="https://www.linkedin.com/in/geoffrey-meca-599346220/"><i class="fab fa-linkedin"></i>Linkedin/Meca Geoffrey</a></li>
         </ul>
-    </div>  
+    </div>
 </div>

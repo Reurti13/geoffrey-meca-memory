@@ -4,7 +4,6 @@ namespace Controllers;
 
 use Models\Form;
 use Models\UserManager;
-use Models\PersonnagesManager;
 
 class ControlUser extends Controller
 {
@@ -17,7 +16,6 @@ class ControlUser extends Controller
         session_start();
         @$idUser = $_SESSION['id'];
         $userManager = new UserManager();
-        $persoManager = new PersonnagesManager();
         @$userInfo = $userManager->reqUserById();
 
         \Renderer::render('views/homeView', compact('title', 'userInfo'));
@@ -33,7 +31,6 @@ class ControlUser extends Controller
         $userManager = $this->model;
 
         @$userInfo = $userManager->reqUserById();
-        $manager = new PersonnagesManager();
 
         \Renderer::render('views/readUserView', compact('title', 'userInfo'));
     }

@@ -1,4 +1,5 @@
 <main>
+    <p class="text-center">Avant de commencer inscrivez vous ou connecter vous !</p>
     <div class="form-login">
         <form action="#" method="post">
             <table>

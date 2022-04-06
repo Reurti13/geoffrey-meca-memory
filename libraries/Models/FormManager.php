@@ -2,7 +2,6 @@
 
 namespace Models;
 
-use \Models\PersonnagesManager;
 
 class FormManager extends Manager
 {
@@ -126,7 +125,6 @@ class FormManager extends Manager
     public function login()
     {
         $user = new UserManager($_POST);
-        $manager = new PersonnagesManager();
         if (isset($_POST['envoyer'])) {
             // on vérifie que les données du formulaire sont présentes
             if (!empty($_POST['pseudo']) && !empty($_POST['pass'])) {
@@ -134,7 +132,6 @@ class FormManager extends Manager
                 // récupérer l'utilisateur depuis la BD
                 $userInfo = $user->reqUserByPseudo($pseudo);
                 $idUser = $userInfo['id'];
-                $perso = $manager->reqPersoByUser($idUser);
 
                 if (isset($userInfo) and password_verify($_POST["pass"], $userInfo["pass"])) {
 
@@ -144,7 +141,6 @@ class FormManager extends Manager
                     $_SESSION['email']  = $userInfo['email'];
                     $_SESSION['pseudo'] = $login;  // on ajoute ses infos en tant que variables de session
                     $_SESSION['pass']   = $mdp;
-                    $_SESSION['perso']  = $perso;
 
                     $authOK = true; // cette variable indique que l'authentification a réussi
 

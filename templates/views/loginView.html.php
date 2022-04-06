@@ -1,3 +1,5 @@
+<p class="text-center">Avant de jouer, Connectez vous !</p>
+
 <div class="form-login">
     <form action="#" method="post">
         <table>
