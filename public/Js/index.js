@@ -61,28 +61,28 @@ function afficherTableau(){
 }
 
 function getImage(valeur){
-    var imgTxt = "./public/pictures/image/";
+    var imgTxt = "./public/pictures/poke/";
 
     switch(valeur){
-        case 1 : imgTxt += "Anni.jfif";
+        case 1 : imgTxt += "Arbok.webp";
         break;
-        case 2 : imgTxt += "Concept.jpg";
+        case 2 : imgTxt += "Bulbizarre.png";
         break;
-        case 3 : imgTxt += "Kylo.jpg";
+        case 3 : imgTxt += "Carapuce.png";
         break;
-        case 4 : imgTxt += "luke-skywalker.jpg";
+        case 4 : imgTxt += "evoli.webp";
         break;
-        case 5 : imgTxt += "Maul.jpg";
+        case 5 : imgTxt += "Machoc.png";
         break;
-        case 6 : imgTxt += "Obi.jpg";
+        case 6 : imgTxt += "mewtwo.webp";
         break;
-        case 7 : imgTxt += "OldJedi.jpg";
+        case 7 : imgTxt += "Miaouss.png";
         break;
-        case 8 : imgTxt += "QuiQuon.jfif";
+        case 8 : imgTxt += "pikachu.jpg";
         break;
-        case 9 : imgTxt += "Revan.jpg";
+        case 9 : imgTxt += "Smogogo.png";
         break;
-        case 10 : imgTxt += "Rey.jpg";
+        case 10 : imgTxt += "reptincel.jpg";
         break;
         default : console.log("cas non pris en compte")
     }

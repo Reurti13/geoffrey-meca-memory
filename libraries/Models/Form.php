@@ -89,6 +89,6 @@ class Form
 
     public function submit($name, $value)
     {
-        return $this->surround('<button type="submit" class="btn btn-success" name="' . $name . '" value="' . $value . '">' . $value . '</button>');
+        return $this->surround('<button type="submit" class="" name="' . $name . '" value="' . $value . '">' . $value . '</button>');
     }
 }

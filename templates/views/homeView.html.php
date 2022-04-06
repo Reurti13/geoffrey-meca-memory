@@ -15,13 +15,12 @@
             if (!empty($userInfo['avatar'])) { ?>
                 <img src="membres/Avatars/<?= $userInfo['avatar'] ?>" width="150px" />
             <?php   } elseif (empty($avatar)) { ?>
-                <img src=" ./membres/Avatars/Neutre.jpg" width="150px" />
+                <img src=" ./public/pictures/neutre.jpg" width="150px" />
             <?php   }
 
             if (isset($_SESSION['id']) and $userInfo['id'] == $_SESSION['id']) {
             ?>
-
-                <div><a href="./index.php?controller=ControlUser&task=editPage">Editer mon profil</a></div>
+                <div><a href="./index.php?controller=ControlUser&task=editPage">Changer ma photo de profil</a></div>
                 <div><a href="./index.php?controller=ControlApp&task=memoryPage">Jouer</a></div>
                 <div><a href="./index.php?controller=ControlApp&task=logOut">Se déconnecter</a></div>
                 <?php if ($userInfo['confirmation'] != 1) { ?>
