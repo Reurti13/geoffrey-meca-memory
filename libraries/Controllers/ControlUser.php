@@ -49,11 +49,6 @@ class ControlUser extends Controller
             $data = $userManager->reqUserById();
 
             $id = $data['id'];
-            $nom = $data['nom'];
-            $prenom = $data['prenom'];
-            $Pseudo = $data['pseudo'];
-            $age = $data['age'];
-            $email = $data['email'];
             $avatar = $data['avatar'];
         }
 
@@ -65,15 +60,7 @@ class ControlUser extends Controller
             'title',
             'form',
             'id',
-            'nom',
-            'nameError',
-            'prenom',
-            'Pseudo',
-            'age',
-            'email',
-            'emailError',
             'avatar',
-            'avatarError',
             'error',
             'userInfo'
         ));

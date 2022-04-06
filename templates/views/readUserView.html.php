@@ -4,15 +4,10 @@
         if (!empty($userInfo['avatar'])) { ?>
             <img src="membres/Avatars/<?= $userInfo['avatar'] ?>" width="150px" />
         <?php } ?>
-
+        <p>Votre meilleur score : </p>
         <p>Pseudo = <?= $userInfo['pseudo'] ?></p>
         <p>Age = <?= $userInfo['age'] ?></p>
         <p>Mail = <?= $userInfo['email'] ?></p>
-        <?php if (isset($_SESSION['id']) and $userInfo['id'] == $_SESSION['id']) { ?>
-            <div class="deconnexion">
-                <a href="./index.php?controller=ControlUser&task=editPage">Editer mon profil</a>
-            </div>
-        <?php } ?>
     </div>
 
     <div class="deconnexion">

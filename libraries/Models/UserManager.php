@@ -156,7 +156,7 @@ class UserManager extends Manager
                 $updateNom = $this->updateNom();
             }
 
-            // Pour le Nom
+            // Pour le Prenom
             if (isset($_POST['prenom']) and !empty($_POST['prenom']) and $_POST['prenom'] != $user['prenom']) {
                 $updatePrenom = $this->updatePrenom();
             }
@@ -203,7 +203,7 @@ class UserManager extends Manager
                     $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
 
                     if (in_array($extensionUpload, $extensionValides)) {
-                        $chemin = "./membres/Avatars/" . $_SESSION['id'] . "." . $extensionUpload;
+                        $chemin = "./public/pictures/avatar/" . $_SESSION['id'] . "." . $extensionUpload;
 
                         $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
 

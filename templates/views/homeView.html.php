@@ -13,9 +13,9 @@
             <div><a href="./index.php?controller=ControlUser&task=readUser">Mes infos</a></div>
             <?php
             if (!empty($userInfo['avatar'])) { ?>
-                <img src="membres/Avatars/<?= $userInfo['avatar'] ?>" width="150px" />
+                <img src="./public/pictures/avatar/<?= $userInfo['avatar'] ?>" width="150px" />
             <?php   } elseif (empty($avatar)) { ?>
-                <img src=" ./public/pictures/neutre.jpg" width="150px" />
+                <img src=" ./public/pictures/avatar/neutre.jpg" width="150px" />
             <?php   }
 
             if (isset($_SESSION['id']) and $userInfo['id'] == $_SESSION['id']) {
