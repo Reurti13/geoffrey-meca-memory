@@ -1265,6 +1265,23 @@ legend {
   transition: transform 0.5s;
   transform: scale(1.2);
 }
+/*------------------------------------Pour le Jeux-----------------------*/
+.pokeball{
+  width: 150px;
+  height: 150px;
+  background: no-repeat center/160% url("../pictures/pokeball.png");
+  border-radius: 50%;
+}
+.pokemon{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  vertical-align: baseline;
+}
+.text{
+  font-size: 3vw;
+
+}
 /*------------------------------------Pour le footer-----------------------*/
 footer {
   color: var(--navbar-color);

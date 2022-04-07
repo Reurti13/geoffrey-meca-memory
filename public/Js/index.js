@@ -46,13 +46,13 @@ function afficherTableau(){
         for(var j=0; j < tabJeu[i].length; j++){
 
             if(tabJeu[i][j] === 0){
-                txt += "<button class='btn btn-primary m-2' style='width:15vw; height:15vw;' onclick='controle(\""+i+","+j+"\")'>?</button>"
+                txt += "<button class='pokeball m-2' onclick='controle(\""+i+","+j+"\")'></button>"
             }
             else if (tabJeu[i][j] === -1) {
-                txt += "<img src='' style='visibility:hidden; width:15vw; height:15vw;' class='m-2'>";
+                txt += "<img src='' style='visibility:hidden;' class='pokemon m-2'>";
             }
             else{
-                txt += "<img src='"+getImage(tabJeu[i][j])+"' style='width:15vw;height:15vw;' class='m-2'>";
+                txt += "<img src='"+getImage(tabJeu[i][j])+"' class='pokemon m-2'>";
             }
         }
         txt += "</div>";

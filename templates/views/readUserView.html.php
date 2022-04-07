@@ -1,10 +1,10 @@
 <main>
     <div class="carte_acces">
+        <p>Votre meilleur score : </p>
         <?php
         if (!empty($userInfo['avatar'])) { ?>
-            <img src="membres/Avatars/<?= $userInfo['avatar'] ?>" width="150px" />
+            <img src="public/pictures/avatar/<?= $userInfo['avatar'] ?>" width="150px" />
         <?php } ?>
-        <p>Votre meilleur score : </p>
         <p>Pseudo = <?= $userInfo['pseudo'] ?></p>
         <p>Age = <?= $userInfo['age'] ?></p>
         <p>Mail = <?= $userInfo['email'] ?></p>
