@@ -4,10 +4,7 @@ namespace Controllers;
 
 use Models\Form;
 use Models\FormManager;
-use Models\PostManager;
 use Models\UserManager;
-use Models\CommentManager;
-use Models\PersonnagesManager;
 
 class ControlApp
 {
@@ -81,7 +78,14 @@ class ControlApp
     {
         $title = 'Jeu';
         session_start();
-        \Renderer::render('views/memory', compact('title'));
+        $idUser = $_SESSION['id'];
+        $form = new Form($_POST);
+        $manager = new UserManager();
+        @$userInfo = $manager->reqUserById();
+        // $scores = $_POST(afficheCount());
+
+
+        \Renderer::render('views/memory', compact('title', 'form', 'userInfo'));
     }
     // Déconnexion
     public function logOut()

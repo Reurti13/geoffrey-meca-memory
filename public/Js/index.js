@@ -13,7 +13,7 @@ toggleMenu();
 
 const divJeu = document.querySelector("#jeu");
 const divCount = document.querySelector("#count");
-const divDeCount = document.querySelector("#decount");
+// const divDeCount = document.querySelector("#decount");
 
 var tabJeu = [
     [0,0,0,0,0],
@@ -23,11 +23,8 @@ var tabJeu = [
 ];
 
 var tabResultat = genereTableauAleatoire();
-
 var ready = true;
-
 var premierClick ="";
-
 var nbAffiche = 0;
 var nbPairesTrouvees = 0;
 var ndEssai = 0;
@@ -35,7 +32,7 @@ var nbChance = 22;
 
 afficherTableau();
 afficheCount();
-afficheDeCount();
+// afficheDeCount();
 
 function afficherTableau(){  
     var txt = "";
@@ -101,7 +98,7 @@ function controle(carte){
             ready = false;
             ndEssai++;
             nbChance--;
-            afficheDeCount();
+            // afficheDeCount();
             afficheCount();
 
             setTimeout(() => {
@@ -160,7 +157,7 @@ function genereTableauAleatoire(){
 }
 
 function afficheCount(){
-    divCount.innerHTML = ndEssai; 
+    divCount.innerHTML = ndEssai;
 }
 
 function afficheDeCount(){
@@ -170,6 +167,7 @@ function afficheDeCount(){
 function finDeJeu(){
 	alert("Félicitation !!!!!!");
 	location.reload();
+
 }
 function gameOver(){
     alert("Vous avez Perdu la partie !");
@@ -177,4 +175,50 @@ function gameOver(){
 }
 function rejouer(){
 	location.reload();
+}
+
+/***************************************Chronometre*********************************/
+
+var h1 = document.getElementsByTagName('h1')[0];
+// var chrono = document.getElementsById('chrono')[0];
+var start = document.getElementById('strt');
+var stop = document.getElementById('stp');
+var reset = document.getElementById('rst');
+var sec = 0;
+var min = 0;
+var hrs = 0;
+var t;
+
+function tick(){
+    sec++;
+    if (sec >= 60) {
+        sec = 0;
+        min++;
+        if (min >= 60) {
+            min = 0;
+            hrs++;
+        }
+    }
+}
+function add() {
+    tick();
+    h1.textContent = (hrs > 9 ? hrs : "0" + hrs) 
+        	 + ":" + (min > 9 ? min : "0" + min)
+       		 + ":" + (sec > 9 ? sec : "0" + sec);
+    timer();
+}
+function timer() {
+    t = setTimeout(add, 1000);
+}
+
+timer();
+
+start.onclick = timer;
+
+stop.onclick = function() {
+    clearTimeout(t);
+}
+reset.onclick = function() {
+    h1.textContent = "00:00:00";
+    seconds = 0; minutes = 0; hours = 0;
 }

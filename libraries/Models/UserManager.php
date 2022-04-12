@@ -78,6 +78,14 @@ class UserManager extends Manager
             }
         }
     }
+    public function addScore($idUser, $scores)
+    {
+        $bdd = $this->getPdo();
+
+        $sql = "INSERT INTO scores (id_user, scores) values(?, ?)";
+        $insertScore = $bdd->prepare($sql);
+        $insertScore->execute(array($idUser, $scores));
+    }
 
     // Lire
     public function findAll(?string $order = "")

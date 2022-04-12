@@ -1266,6 +1266,19 @@ legend {
   transform: scale(1.2);
 }
 /*------------------------------------Pour le Jeux-----------------------*/
+.affichageJeu{
+  display: flex;
+  justify-content: space-around;
+}
+.tapis{
+  width: 50%;
+}
+.resultat{
+  width: 25%;
+}
+.info{
+  width: 25%;
+}
 .pokeball{
   width: 150px;
   height: 150px;
@@ -1278,9 +1291,8 @@ legend {
   border-radius: 50%;
   vertical-align: baseline;
 }
-.text{
-  font-size: 3vw;
-
+.top{
+  text-decoration: underline;
 }
 /*------------------------------------Pour le footer-----------------------*/
 footer {
