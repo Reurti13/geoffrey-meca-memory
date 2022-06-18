@@ -78,20 +78,12 @@ class UserManager extends Manager
             }
         }
     }
-    public function addScore($idUser, $scores)
-    {
-        $bdd = $this->getPdo();
-
-        $sql = "INSERT INTO scores (id_user, scores) values(?, ?)";
-        $insertScore = $bdd->prepare($sql);
-        $insertScore->execute(array($idUser, $scores));
-    }
 
     // Lire
     public function findAll(?string $order = "")
     {
         $bdd = $this->getPdo();
-        $sql = "SELECT * FROM {$this->table}";
+        $sql = "SELECT * FROM {$this->table} AS t1 JOIN scores AS t2 ON t1.id = t2.id_users";
 
         if ($order) {
             $sql .= " ORDER BY " . $order;

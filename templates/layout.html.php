@@ -5,6 +5,7 @@
 
 <?php //include './public/footer.php'; 
 ?>
+
 <script src="./public/Js/index.js"></script>
 </body>
 

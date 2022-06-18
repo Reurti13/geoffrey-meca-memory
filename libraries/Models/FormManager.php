@@ -27,10 +27,28 @@ class FormManager extends Manager
         $insertMbr->execute(array($pseudo, $age, $pass, $mail, $key));
     }
 
+    public function addScore($idUser)
+    {
+        if (isset($_POST['envoyer'])) {
+
+            $score = htmlspecialchars(($_POST['score']));
+            if (!empty($_POST['score'])) {
+
+                $bdd = $this->getPdo();
+                $insertScore = $bdd->prepare("INSERT INTO scores (id_users, scores) VALUE (?, ?)");
+                $insertScore->execute(array($idUser, $score));
+
+                \Http::redirect('./index.php?controller=ControlApp&task=difficultPage');
+            } else {
+                echo "il y a un bug...";
+                die();
+            }
+        }
+    }
+
     public function verifForm() // Inscription
     {
         $form = new FormManager($_POST);
-        session_start();
 
         if (isset($_POST['envoyer'])) {
             $pseudo = htmlspecialchars(trim($_POST['pseudo']));

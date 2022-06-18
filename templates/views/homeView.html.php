@@ -21,7 +21,7 @@
             if (isset($_SESSION['id']) and $userInfo['id'] == $_SESSION['id']) {
             ?>
                 <div><a href="./index.php?controller=ControlUser&task=editPage">Changer ma photo de profil</a></div>
-                <div><a href="./index.php?controller=ControlApp&task=memoryPage">Jouer</a></div>
+                <div><a href="./index.php?controller=ControlApp&task=difficultPage">Jouer</a></div>
                 <div><a href="./index.php?controller=ControlApp&task=logOut">Se déconnecter</a></div>
                 <?php if ($userInfo['confirmation'] != 1) { ?>
                     <a href="./index.php?controller=ControlApp&task=confirmPage">Confirmer votre compte</a>

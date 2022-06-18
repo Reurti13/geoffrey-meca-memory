@@ -1270,9 +1270,7 @@ legend {
   display: flex;
   justify-content: space-around;
 }
-.tapis{
-  width: 50%;
-}
+
 .resultat{
   width: 25%;
 }
@@ -1280,14 +1278,14 @@ legend {
   width: 25%;
 }
 .pokeball{
-  width: 150px;
-  height: 150px;
+  width: 12vw;
+  height: 12vw;
   background: no-repeat center/160% url("../pictures/pokeball.png");
   border-radius: 50%;
 }
 .pokemon{
-  width: 150px;
-  height: 150px;
+  width: 12vw;
+  height: 12vw;
   border-radius: 50%;
   vertical-align: baseline;
 }

@@ -72,6 +72,14 @@ class ControlApp
 
         \Renderer::render('views/confirmView', compact('title', 'pseudo'));
     }
+    // Affiche la Page du jeu Memory
+    public function difficultPage()
+    {
+        $title = 'Difficulté';
+        session_start();
+
+        \Renderer::render('views/difficultView', compact('title'));
+    }
 
     // Affiche la Page du jeu Memory
     public function memoryPage()
@@ -79,14 +87,17 @@ class ControlApp
         $title = 'Jeu';
         session_start();
         $idUser = $_SESSION['id'];
-        $form = new Form($_POST);
         $manager = new UserManager();
         @$userInfo = $manager->reqUserById();
-        // $scores = $_POST(afficheCount());
+        $usersList = $manager->findAll();
 
+        $form = new Form();
+        $formManager = new FormManager($_POST);
+        $formManager->addScore($idUser);
 
-        \Renderer::render('views/memory', compact('title', 'form', 'userInfo'));
+        \Renderer::render('views/memory', compact('title', 'usersList', 'userInfo', 'form'));
     }
+
     // Déconnexion
     public function logOut()
     {

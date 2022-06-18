@@ -19,7 +19,7 @@ class Manager
         ]);
         return $bdd;
 
-        // $bdd = new \PDO('mysql:host=mysql-fokemon.alwaysdata.net;dbname=fokemon_blog;charset=utf8', 'fokemon', 'Trampoline2021.', [
+        // $bdd = new \PDO('mysql:host=mysql-fokemon.alwaysdata.net;dbname=fokemon_memory;charset=utf8', 'fokemon', 'Trampoline2021.', [
         //     \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
         //     \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
         // ]);
