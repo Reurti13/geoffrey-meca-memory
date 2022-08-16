@@ -227,6 +227,9 @@ body {
   font-size: var(--font-size);
   display: flex;
   flex-direction: column;
+  background: no-repeat url("../pictures/prairie3.jpg");
+  background-size: cover;
+  background-position: center;
   font-family: "Poppins", sans-serif;
   overflow: hidden;
 }
@@ -254,61 +257,15 @@ h3 {
   font-size: 2em;
 }
 a {
+  text-decoration: none;
+  color: blue;
   font-size: 2vw;
   margin: 3px;
 }
 p {
   font-size: 2vw;
 }
-.carte_acces {
-  text-align: center;
-  border: cadetblue solid 3px;
-  margin: 20px auto;
-  width: 80%;
-  padding-top: 3%;
-  padding-bottom: 3%;
-}
-.msgerreur {
-  margin: 0 auto;
-  color: red;
-  font-size: 5vw;
-}
-.deconnexion {
-  text-align: center;
-  margin: 0 auto;
-  padding-bottom: 1em;
-  padding-top: 1em;
-  width: 30%;
-}
-.deconnexion:hover {
-  transition: transform 0.5s;
-  transform: scale(1.2);
-}
-.scroll {
-  position: fixed;
-  text-align: center;
-  width: 15%;
-}
-.scroll:hover {
-  transition: transform 0.5s;
-  transform: scale(1.2);
-}
 /*----------------------------------------ACCUEIL---------------------------------------------*/
-.accueil{
-  background: no-repeat url("../pictures/Backgrounds/prairie3.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.standby{
-  background: no-repeat url("../pictures/Backgrounds/prairieFokemon.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.arene{
-  background: no-repeat url("../pictures/Backgrounds/arene.jpeg");
-  background-size: cover;
-  background-position: center;
-}
 @keyframes tremblement {
   0% {
     opacity: 1;
@@ -753,7 +710,7 @@ p {
 .go_fight img {
   width: 50%;
 }
-/*XXXXXXXXXXXXXXXXXXXXXXXXXXXX NUAGES XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/*-----------------------------------NUAGES------------------------------------------------------*/
 .background-wrap {
   padding-top: 50px;
   height: 100%;
@@ -1105,6 +1062,7 @@ select {
   margin-top: 3%;
 }
 button {
+  text-align: center;
   font-size: 2vw;
 }
 table {
@@ -1133,15 +1091,186 @@ form input:hover {
   transition: transform 0.5s;
   transform: scale(1.07);
 }
+/*-----------------------------------PERSO------------------------------------------------------*/
+fieldset {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 3vw;
+  width: 70%;
+  min-height: 10%;
+  margin: 0 auto;
+  margin-bottom: 3%;
+  background-color: rgba(0, 0, 0, 0.488);
+  color: gainsboro;
+  border-radius: 20px;
+}
+legend {
+  margin: 0 auto;
+  text-align: center;
+  width: 40%;
+  background-color: rgb(168, 0, 0);
+  font-size: 30px;
+  color: rgb(238, 217, 24);
+  border-right: 3px solid black;
+  border-radius: 20px;
+}
+.combatantName:hover {
+  letter-spacing: 5px;
+}
+.combatantName {
+  font-family: "Indie Flower", cursive;
+  font-size: 6vw;
+  animation: wheelHueColor 5s infinite;
+  filter: drop-shadow(15px 10px 2px #5e5c5c);
+}
+@keyframes wheelHueColor {
+  from,
+  to {
+    color: hsl(0, 100%, 50%);
+  }
+  10% {
+    color: hsl(360, 65%, 45%);
+  }
+  20% {
+    color: hsl(36, 80%, 45%);
+  }
+  30% {
+    color: hsl(72, 75%, 35%);
+  }
+  40% {
+    color: hsl(108, 65%, 35%);
+  }
+  50% {
+    color: hsl(144, 75%, 35%);
+  }
+  60% {
+    color: hsl(180, 75%, 35%);
+  }
+  70% {
+    color: hsl(216, 60%, 45%);
+  }
+  80% {
+    color: hsl(252, 65%, 50%);
+  }
+  90% {
+    color: hsl(288, 60%, 40%);
+  }
+}
+.combatantLvL {
+  order: 1;
+  filter: drop-shadow(15px 10px 2px #5e5c5c);
+}
+.combatantPV {
+  order: 3;
+  filter: drop-shadow(15px 10px 2px #5e5c5c);
+}
+.combatantXP {
+  order: 2;
+  filter: drop-shadow(15px 10px 2px #5e5c5c);
+}
+.conteneurPerso {
+  margin: 0 auto;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 80%;
+}
+.conteneurPerso a {
+  font-size: 1.5vw;
+  color: rgb(96, 49, 13);
+}
+.listepersonnage {
+  /* class pour la liste du choix des personnages (createPersoPage)*/
+  background: rgba(128, 128, 128, 0.76);
+  border-radius: 20px;
+  width: 20%;
+  margin: 1%;
+  padding: 1%;
+}
+.listepersonnage:hover {
+  transition: transform 0.5s;
+  transform: scale(1.2);
+}
+.listepersonnage a {
+  margin: 0 auto;
+  width: 90%;
+}
+/*-----------------------------------BLOG------------------------------------------------------*/
+.carte_acces {
+  text-align: center;
+  border: cadetblue solid 3px;
+  margin: 20px auto;
+  width: 80%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+.news {
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 4%;
+  width: 60%;
+}
+.news p {
+  background-color: #cccccc;
+  margin-top: 0px;
+}
+.news h3 {
+  background-color: rgb(145, 179, 114);
+  color: white;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 2vw;
+}
+.liste-comm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.commantaires {
+  text-align: center;
+  display: inline;
+  padding: 3%;
+}
+.liste-comm p {
+  padding: 3% 0;
+}
+.comm {
+  color: red;
+  border-bottom: 1px dashed #000;
+}
+.msgerreur {
+  margin: 0 auto;
+  color: red;
+  font-size: 5vw;
+}
+.deconnexion {
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  width: 30%;
+}
+.deconnexion:hover {
+  transition: transform 0.5s;
+  transform: scale(1.2);
+}
+.scroll {
+  position: fixed;
+  text-align: center;
+  width: 15%;
+}
+.scroll:hover {
+  transition: transform 0.5s;
+  transform: scale(1.2);
+}
 /*------------------------------------Pour le Jeux-----------------------*/
 .affichageJeu{
   display: flex;
   justify-content: space-around;
 }
-.game{
-  display: block;
-  width: auto;
-}
+
 .resultat{
   width: 25%;
 }
@@ -1149,14 +1278,14 @@ form input:hover {
   width: 25%;
 }
 .pokeball{
-  width: 6vw;
-  height: 6vw;
+  width: 12vw;
+  height: 12vw;
   background: no-repeat center/160% url("../pictures/pokeball.png");
   border-radius: 50%;
 }
 .pokemon{
-  width: 6vw;
-  height: 6vw;
+  width: 12vw;
+  height: 12vw;
   border-radius: 50%;
   vertical-align: baseline;
 }

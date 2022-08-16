@@ -1,4 +1,3 @@
-<main>
     <div id="panel" class="affichageJeu">
 
         <div class="resultat text-center">
@@ -9,7 +8,7 @@
         </div>
 
         <?php if ($_GET['difficult'] === 'difficile') { ?>
-            <div class="container text-center" id="strt">
+            <div class="container text-center game">
                 <div id="jeu"></div>
                 <button class='text-center btn btn-success mt-5' style='width:100px; height:100px;' onclick='rejouer()'>Rejouer</button>
             </div>
@@ -43,4 +42,4 @@
             </tr>
         </table>
     </form>
-</main>
+    </main>
