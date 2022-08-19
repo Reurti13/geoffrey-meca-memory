@@ -2,17 +2,17 @@
 
         <div class="resultat text-center">
             <p class="top">Top 10</p>
-            <?php foreach ($usersList as $user) {
-                echo "<p>" . $user['pseudo'] . " : " . $user['scores'] . "</p>" . "</br>";
+            <?php foreach ($usersList as $user) { ?>
+                <img src="./public/pictures/avatar/<?= $userInfo['avatar'] ?>" width="30px" />;
+
+            <?= "<p>" . $user['pseudo'] . " : " . $user['scores'] . "</p>" . "</br>";
             } ?>
         </div>
 
-        <?php if ($_GET['difficult'] === 'difficile') { ?>
-            <div class="container text-center game">
-                <div id="jeu"></div>
-                <button class='text-center btn btn-success mt-5' style='width:100px; height:100px;' onclick='rejouer()'>Rejouer</button>
-            </div>
-        <?php   } ?>
+        <div class="container text-center game">
+            <div id="jeu"></div>
+            <button class='text-center btn btn-success mt-5' style='width:100px; height:100px;' onclick='rejouer()'>Rejouer</button>
+        </div>
 
         <div class="info text-center mt-3">
             <p>Vous en êtes à <span id="count"></span> coups !</p>

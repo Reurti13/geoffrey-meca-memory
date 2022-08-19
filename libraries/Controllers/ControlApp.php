@@ -89,11 +89,13 @@ class ControlApp
         $idUser = $_SESSION['id'];
         $manager = new UserManager();
         @$userInfo = $manager->reqUserById();
-        $usersList = $manager->findAll();
+        $usersList = $manager->findAll('scores ASC');
 
         $form = new Form();
         $formManager = new FormManager($_POST);
-        $formManager->addScore($idUser);
+        @$scoreUser = $formManager->selectScore($idUser);
+        $formManager->addScore($idUser, $scoreUser);
+        $formManager->updateScore($idUser, $scoreUser);
 
         \Renderer::render('views/memory', compact('title', 'usersList', 'userInfo', 'form'));
     }

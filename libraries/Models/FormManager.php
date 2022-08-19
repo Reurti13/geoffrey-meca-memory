@@ -27,21 +27,48 @@ class FormManager extends Manager
         $insertMbr->execute(array($pseudo, $age, $pass, $mail, $key));
     }
 
-    public function addScore($idUser)
+    public function selectScore($idUser)
+    {
+        $bdd = $this->getPdo();
+        $reqScore = $bdd->prepare("SELECT scores FROM scores WHERE id_users = ?");
+        $reqScore->execute(array($idUser));
+
+        $score = $reqScore->fetch();
+        return $score['scores'];
+    }
+
+    public function addScore($idUser, $score)
     {
         if (isset($_POST['envoyer'])) {
 
-            $score = htmlspecialchars(($_POST['score']));
-            if (!empty($_POST['score'])) {
+            $bdd = $this->getPdo();
+            $newScore = intval(htmlspecialchars(($_POST['score'])));
 
-                $bdd = $this->getPdo();
+            if (empty($score) and !empty($_POST['score'])) {
+
                 $insertScore = $bdd->prepare("INSERT INTO scores (id_users, scores) VALUE (?, ?)");
-                $insertScore->execute(array($idUser, $score));
+                $insertScore->execute(array($idUser, $newScore));
 
                 \Http::redirect('./index.php?controller=ControlApp&task=difficultPage');
+            }
+        }
+    }
+
+    public function updateScore($idUser, $score)
+    {
+        if (isset($_POST['envoyer']) and !empty($_POST['score'])) {
+
+            $newScore = intval(htmlspecialchars($_POST['score']));
+            $score = intval($score);
+
+            if ($newScore < $score) {
+                $bdd = $this->getPdo();
+
+                $insertScore = $bdd->prepare("UPDATE scores SET scores = ? WHERE id_users = ?");
+                $insertScore->execute(array($newScore, $idUser));
+                \Http::redirect('./index.php?controller=ControlApp&task=difficultPage');
             } else {
-                echo "il y a un bug...";
-                die();
+                \Http::redirect('./index.php?controller=ControlApp&task=difficultPage');
             }
         }
     }
