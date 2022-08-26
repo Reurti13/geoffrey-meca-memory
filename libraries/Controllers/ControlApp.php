@@ -86,16 +86,40 @@ class ControlApp
     {
         $title = 'Jeu';
         session_start();
-        $idUser = $_SESSION['id'];
-        $manager = new UserManager();
-        @$userInfo = $manager->reqUserById();
-        $usersList = $manager->findAll('scores ASC');
 
-        $form = new Form();
-        $formManager = new FormManager($_POST);
-        @$scoreUser = $formManager->selectScore($idUser);
-        $formManager->addScore($idUser, $scoreUser);
-        $formManager->updateScore($idUser, $scoreUser);
+        $idUser    = $_SESSION['id'];
+        $manager   = new UserManager();
+        @$userInfo = $manager->reqUserById($idUser);
+
+        if ($_GET['difficult'] == 'facile') {
+            $usersList = $manager->findAll('scoresfacile ASC');
+        } else if ($_GET['difficult'] == 'moyen') {
+            $usersList = $manager->findAll('scoresmoyen ASC');
+        } else {
+            $usersList = $manager->findAll('scoresdifficile ASC');
+        }
+
+        $form                = new Form();
+        $formManager         = new FormManager($_POST);
+        @$reqScoreUser       = $formManager->selectScore($idUser);
+        @$scoreUserFacile    = $reqScoreUser['scoresfacile'];
+        @$scoreUserMoyen     = $reqScoreUser['scoresmoyen'];
+        @$scoreUserDifficile = $reqScoreUser['scoresdifficile'];
+        @$pointUser          = $reqScoreUser['points'];
+
+        if (empty($scoreUserFacile) and empty($scoreUserMoyen) and empty($scoreUserDifficile) and empty($pointUser)) {
+            $formManager->addScore($idUser);
+        } else {
+            if ($_GET['difficult'] == 'facile') {
+                $formManager->updateScore($idUser, $scoreUserFacile, $pointUser);
+            } else if ($_GET['difficult'] == 'moyen') {
+                $formManager->updateScore($idUser, $scoreUserMoyen, $pointUser);
+            } else {
+                $formManager->updateScore($idUser, $scoreUserDifficile, $pointUser);
+            }
+        }
+
+
 
         \Renderer::render('views/memory', compact('title', 'usersList', 'userInfo', 'form'));
     }

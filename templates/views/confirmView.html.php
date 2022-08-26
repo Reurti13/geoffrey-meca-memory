@@ -6,12 +6,11 @@
     echo '<a href="./index.php?controller=controlUser&task=homePage&id= ' . $_SESSION['id'] . '">Poursuivre vers votre espace perso</a>';
     ?>
 </div>
-<?php   
-    if(isset($error))
-    {?>
+<?php
+if (isset($error)) { ?>
     <div class="msgerreur" align="bottom">
         <?= $error; ?>
     </div>
-    <?php 
-    }
-?>
+<?php
+} ?>
+</main>

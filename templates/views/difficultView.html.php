@@ -7,3 +7,4 @@
 
     <a href="./index.php?controller=ControlApp&task=memoryPage&difficult=difficile">Difficile</a>
 </div>
+</main>

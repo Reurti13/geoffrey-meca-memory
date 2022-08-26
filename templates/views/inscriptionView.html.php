@@ -17,6 +17,11 @@
                     <?= $form->inputPass('Mot de Passe', 'Confirmation', 'Confirmer Mot de Passe'); ?>
                 </td>
             </tr>
+            <!-- <tr>
+                <td>
+                    <?= $form->inputNumber('Âge', 'age', 'Entrer votre âge', ''); ?>
+                </td>
+            </tr> -->
             <tr>
                 <td>
                     <?= $form->inputMail('Votre Email', 'email', ""); ?>

@@ -105,12 +105,12 @@ class UserManager extends Manager
         }
     }
 
-    public function reqUserById()
+    public function reqUserById($idUser)
     {
         $bdd = $this->getPdo();
 
-        $reqUser = $bdd->prepare("SELECT * FROM {$this->table} WHERE id= ?");
-        $reqUser->execute(array($_SESSION['id']));
+        $reqUser = $bdd->prepare("SELECT * FROM {$this->table} WHERE id = ?");
+        $reqUser->execute(array($idUser));
         $user = $reqUser->fetch();
 
         return $user;
@@ -149,7 +149,7 @@ class UserManager extends Manager
     public function editProfil()
     {
         if (isset($_SESSION['id'])) {
-            $user = $this->reqUserById();
+            $user = $this->reqUserById($_SESSION['id']);
 
             // Pour le Nom
             if (isset($_POST['nom']) and !empty($_POST['nom']) and $_POST['nom'] != $user['nom']) {

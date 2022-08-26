@@ -28,8 +28,6 @@ for (let i = 0; i < parts.length; i++) {
 
     $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
 
-    console.log(temp[1])
-
     const main = document.querySelector("main");
 
     if(temp[1] == undefined){
@@ -47,7 +45,9 @@ for (let i = 0; i < parts.length; i++) {
 
     const divJeu     = document.querySelector("#jeu");
     const divCount   = document.querySelector("#count");
+    const divPoint   = document.querySelector("#point");
     const inputScore = document.querySelectorAll("input")[1];
+    const inputPoint = document.querySelectorAll("input")[2];
     const divPanel   = document.querySelector("#panel");
     const formResult = document.querySelector("#result")
 
@@ -59,12 +59,13 @@ for (let i = 0; i < parts.length; i++) {
             [0,0,0,0]
         ];
 
-        let tabResultat = genereTableauAleatoire();
-        let ready = true;
-        let premierClick ="";
-        let nbAffiche = 0;
+        let tabResultat      = genereTableauAleatoire();
+        let ready            = true;
+        let premierClick     ="";
+        let nbAffiche        = 0;
         let nbPairesTrouvees = 0;
-        let nbEssai = 0;
+        let nbEssaiFacile    = 0;
+        let nbPoints         = 0;
 
         afficherTableau();
         afficheCount();
@@ -131,7 +132,7 @@ for (let i = 0; i < parts.length; i++) {
     
                 if(nbAffiche>1){ // Vérification
                     ready = false;
-                    nbEssai++;
+                    nbEssaiFacile++;
                     afficheCount();
     
                     setTimeout(() => {
@@ -153,7 +154,8 @@ for (let i = 0; i < parts.length; i++) {
                         if(nbPairesTrouvees==4){
                             divPanel.classList.add('visually-hidden')
                             formResult.classList.remove('visually-hidden')
-                            inputScore.value = nbEssai
+                            inputScore.value = nbEssaiFacile
+                            inputPoint.value = nbPoints
                         }
     
                     },1000)  
@@ -191,7 +193,13 @@ for (let i = 0; i < parts.length; i++) {
         }
 
         function afficheCount(){
-            divCount.innerHTML = nbEssai;
+            if (nbEssaiFacile < 6){
+                nbPoints = 10;
+            }else{
+                nbPoints = 5;
+            }
+            divCount.innerHTML = nbEssaiFacile;
+            divPoint.innerHTML = nbPoints;
         }
 
         function rejouer(){
@@ -206,12 +214,13 @@ for (let i = 0; i < parts.length; i++) {
             [0,0,0,0]
         ];
 
-        let tabResultat = genereTableauAleatoire();
-        let ready = true;
-        let premierClick ="";
-        let nbAffiche = 0;
+        let tabResultat      = genereTableauAleatoire();
+        let ready            = true;
+        let premierClick     ="";
+        let nbAffiche        = 0;
         let nbPairesTrouvees = 0;
-        let nbEssai = 0;
+        let nbEssaiMoyen     = 0;
+        let nbPoints         = 0
 
         afficherTableau();
         afficheCount();
@@ -278,7 +287,7 @@ for (let i = 0; i < parts.length; i++) {
     
                 if(nbAffiche>1){ // Vérification
                     ready = false;
-                    nbEssai++;
+                    nbEssaiMoyen++;
                     afficheCount();
     
                     setTimeout(() => {
@@ -300,7 +309,8 @@ for (let i = 0; i < parts.length; i++) {
                         if(nbPairesTrouvees==6){
                             divPanel.classList.add('visually-hidden')
                             formResult.classList.remove('visually-hidden')
-                            inputScore.value = nbEssai
+                            inputScore.value = nbEssaiMoyen
+                            inputPoint.value = nbPoints
                         }
     
                     },1000)  
@@ -338,7 +348,13 @@ for (let i = 0; i < parts.length; i++) {
         }
 
         function afficheCount(){
-            divCount.innerHTML = nbEssai;
+            if (nbEssaiMoyen < 8){
+                nbPoints = 25
+            }else{
+                nbPoints = 10
+            }
+            divCount.innerHTML = nbEssaiMoyen;
+            divPoint.innerHTML = nbPoints;
         }
 
         function rejouer(){
@@ -355,12 +371,13 @@ for (let i = 0; i < parts.length; i++) {
             [0,0,0,0]
         ];
 
-        let tabResultat = genereTableauAleatoire();
-        let ready = true;
-        let premierClick ="";
-        let nbAffiche = 0;
+        let tabResultat      = genereTableauAleatoire();
+        let ready            = true;
+        let premierClick     ="";
+        let nbAffiche        = 0;
         let nbPairesTrouvees = 0;
-        let nbEssai = 0;
+        let nbEssai          = 0;
+        let nbPoints         = 0
 
         afficherTableau();
         afficheCount();
@@ -450,6 +467,7 @@ for (let i = 0; i < parts.length; i++) {
                             divPanel.classList.add('visually-hidden')
                             formResult.classList.remove('visually-hidden')
                             inputScore.value = nbEssai
+                            inputPoint.value = nbPoints
                         }
 
                     },1000)  
@@ -487,6 +505,11 @@ for (let i = 0; i < parts.length; i++) {
         }
 
         function afficheCount(){
+            if (nbEssai < 15){
+                nbPoints = 30
+            }else{
+                nbPoints = 20
+            }
             divCount.innerHTML = nbEssai;
         }
 

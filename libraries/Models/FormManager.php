@@ -18,56 +18,85 @@ class FormManager extends Manager
         return $comptexiste;
     }
 
-    public function add($pseudo, $age, $pass, $mail, $key)
+    public function add($pseudo, $pass, $mail, $key)
     {
         $bdd = $this->getPdo();
         $insertMbr = $bdd->prepare("INSERT INTO {$this->table} 
-                                    (pseudo, age, pass, email, confirmkey, date_inscription) 
-                                    VALUE (?, ?, ?, ?, ?, NOW())");
-        $insertMbr->execute(array($pseudo, $age, $pass, $mail, $key));
+                                    (pseudo, pass, email, confirmkey, date_inscription) 
+                                    VALUE (?, ?, ?, ?, NOW())");
+        $insertMbr->execute(array($pseudo, $pass, $mail, $key));
     }
 
     public function selectScore($idUser)
     {
         $bdd = $this->getPdo();
-        $reqScore = $bdd->prepare("SELECT scores FROM scores WHERE id_users = ?");
+        $reqScore = $bdd->prepare("SELECT scoresfacile, scoresmoyen, scoresdifficile, points FROM scores WHERE id_users = ?");
         $reqScore->execute(array($idUser));
 
         $score = $reqScore->fetch();
-        return $score['scores'];
+        return $score;
     }
 
-    public function addScore($idUser, $score)
+    public function addScore($idUser)
     {
         if (isset($_POST['envoyer'])) {
 
             $bdd = $this->getPdo();
-            $newScore = intval(htmlspecialchars(($_POST['score'])));
+            $newScore = intval(htmlspecialchars($_POST['score']));
+            $point    = intval(htmlspecialchars($_POST['point']));
 
-            if (empty($score) and !empty($_POST['score'])) {
+            if ($_GET['difficult'] == 'facile') {
+                $score = 'scoresfacile';
+            }
+            if ($_GET['difficult'] == 'moyen') {
+                $score = 'scoresmoyen';
+            }
+            if ($_GET['difficult'] == 'difficile') {
+                $score = 'scoresdifficile';
+            }
 
-                $insertScore = $bdd->prepare("INSERT INTO scores (id_users, scores) VALUE (?, ?)");
-                $insertScore->execute(array($idUser, $newScore));
+            if (!empty($_POST['score']) and !empty($_POST['point'])) {
+
+                $insertScore = $bdd->prepare("INSERT INTO scores (id_users, $score, points) VALUE (?, ?, ?)");
+                $insertScore->execute(array($idUser, $newScore, $point));
 
                 \Http::redirect('./index.php?controller=ControlApp&task=difficultPage');
             }
         }
     }
 
-    public function updateScore($idUser, $score)
+    public function updateScore($idUser, $score, $point)
     {
-        if (isset($_POST['envoyer']) and !empty($_POST['score'])) {
+        if (isset($_POST['envoyer']) and !empty($_POST['score']) and !empty($_POST['point'])) {
 
+            $bdd = $this->getPdo();
             $newScore = intval(htmlspecialchars($_POST['score']));
-            $score = intval($score);
+            $newPoint = intval(htmlspecialchars($_POST['point']));
+            $score    = intval($score);
+            $point    = intval($point);
 
-            if ($newScore < $score) {
-                $bdd = $this->getPdo();
+            $points   = $point + $newPoint;
 
-                $insertScore = $bdd->prepare("UPDATE scores SET scores = ? WHERE id_users = ?");
-                $insertScore->execute(array($newScore, $idUser));
+            if ($_GET['difficult'] == 'facile') {
+                $scoreTable = 'scoresfacile';
+            }
+            if ($_GET['difficult'] == 'moyen') {
+                $scoreTable = 'scoresmoyen';
+            }
+            if ($_GET['difficult'] == 'difficile') {
+                $scoreTable = 'scoresdifficile';
+            }
+
+            if ($newScore < $score || $score == null) {
+
+                $insertScore = $bdd->prepare("UPDATE scores SET $scoreTable = ?, points = ? WHERE id_users = ?");
+                $insertScore->execute(array($newScore, $points, $idUser));
+
                 \Http::redirect('./index.php?controller=ControlApp&task=difficultPage');
-            } else {
+            } else if ($points > $point) {
+
+                $insertScore = $bdd->prepare("UPDATE scores SET points = ? WHERE id_users = ?");
+                $insertScore->execute(array($idUser, $points));
                 \Http::redirect('./index.php?controller=ControlApp&task=difficultPage');
             }
         }
@@ -79,13 +108,12 @@ class FormManager extends Manager
 
         if (isset($_POST['envoyer'])) {
             $pseudo = htmlspecialchars(trim($_POST['pseudo']));
-            $prePass = htmlspecialchars(trim($_POST['pass']));
-            $age = htmlspecialchars(trim($_POST['age']));
+            $prePass = htmlspecialchars(trim($_POST['passe']));
             $prePass2 = htmlspecialchars(trim($_POST['Confirmation']));
-            $pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+            $pass = password_hash($_POST['passe'], PASSWORD_DEFAULT);
             $mail = htmlspecialchars(trim($_POST['email']));
 
-            if (!empty($_POST['pseudo']) and !empty($_POST['age']) and !empty($_POST['pass']) and !empty($_POST['Confirmation']) and !empty($_POST['email'])) {
+            if (!empty($_POST['pseudo']) and !empty($_POST['passe']) and !empty($_POST['Confirmation']) and !empty($_POST['email'])) {
                 $pseudolength = strlen($pseudo);
                 if ($pseudolength <= 50) {
                     $comptexiste = $form->verifCompteExist($pseudo);
@@ -105,7 +133,7 @@ class FormManager extends Manager
                                         $key .= mt_rand(0, 9);
                                     }
 
-                                    $form->add($pseudo, $age, $pass, $mail, $key);
+                                    $form->add($pseudo, $pass, $mail, $key);
                                     $form->mail($pseudo, $key, $mail);
 
                                     $userManager = new UserManager();

@@ -91,6 +91,15 @@ form button{
 .dugtrio1{
     display: none;
 }
+/*-----------------------------------JEUX------------------------------------------------------*/
+.pokeball{
+    width: 12vw;
+    height: 12vw;
+}
+.pokemon{
+    width: 12vw;
+    height: 12vw;
+}
 /***********************************FOOTER**************************/
 footer{
     font-size: 1.1vw;

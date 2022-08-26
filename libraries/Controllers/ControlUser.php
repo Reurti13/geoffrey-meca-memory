@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Models\Form;
+use Models\FormManager;
 use Models\UserManager;
 
 class ControlUser extends Controller
@@ -14,9 +15,9 @@ class ControlUser extends Controller
     {
         $title = 'Home';
         session_start();
-        @$idUser = $_SESSION['id'];
-        $userManager = new UserManager();
-        @$userInfo = $userManager->reqUserById();
+        $idUser      = $_SESSION['id'];
+        $userManager = $this->model;
+        $userInfo    = $userManager->reqUserById($idUser);
 
         \Renderer::render('views/homeView', compact('title', 'userInfo'));
     }
@@ -27,12 +28,14 @@ class ControlUser extends Controller
         $title = "Mes Infos";
         session_start();
 
-        $idUser = $_SESSION['id'];
+        $idUser      = $_SESSION['id'];
         $userManager = $this->model;
+        $manager     = new FormManager();
 
-        @$userInfo = $userManager->reqUserById();
+        @$userInfo   = $userManager->reqUserById($idUser);
+        $scoreUser   = $manager->selectScore($idUser);
 
-        \Renderer::render('views/readUserView', compact('title', 'userInfo'));
+        \Renderer::render('views/readUserView', compact('title', 'userInfo', 'scoreUser'));
     }
 
     // Affiche la Page Mon profil
@@ -41,28 +44,26 @@ class ControlUser extends Controller
         $title = 'Mon Profil';
         session_start();
         $userManager = $this->model;
+        $idUser      = $_SESSION['id'];
+        $form        = new Form($_POST);
+        @$error      = $userManager->editProfil();
 
         if (!empty($_GET['id'])) {
             $id = $_REQUEST['id'];
         }
         if (empty($_POST['envoyer'])) {
-            $data = $userManager->reqUserById();
 
-            $id = $data['id'];
-            $avatar = $data['avatar'];
+            @$userInfo = $userManager->reqUserById($idUser);
+            @$id     = $userInfo['id'];
+            @$avatar = $userInfo['avatar'];
         }
-
-        $form = new Form($_POST);
-        @$userInfo = $userManager->reqUserById();
-        @$error = $userManager->editProfil();
 
         \Renderer::render('views/editView', compact(
             'title',
             'form',
             'id',
             'avatar',
-            'error',
-            'userInfo'
+            'error'
         ));
     }
 }
