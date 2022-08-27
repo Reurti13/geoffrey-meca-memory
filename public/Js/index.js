@@ -511,6 +511,7 @@ for (let i = 0; i < parts.length; i++) {
                 nbPoints = 20
             }
             divCount.innerHTML = nbEssai;
+            divPoint.innerHTML = nbPoints;
         }
 
         function rejouer(){
