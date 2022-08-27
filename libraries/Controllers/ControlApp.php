@@ -72,13 +72,22 @@ class ControlApp
 
         \Renderer::render('views/confirmView', compact('title', 'pseudo'));
     }
-    // Affiche la Page du jeu Memory
+    // Affiche la Page des difficulter
     public function difficultPage()
     {
         $title = 'Difficulté';
         session_start();
 
         \Renderer::render('views/difficultView', compact('title'));
+    }
+
+    // Affiche la Page des jeux
+    public function gamesPage()
+    {
+        $title = 'Games';
+        session_start();
+
+        \Renderer::render('views/gamesView', compact('title'));
     }
 
     // Affiche la Page du jeu Memory
@@ -122,6 +131,15 @@ class ControlApp
 
 
         \Renderer::render('views/memory', compact('title', 'usersList', 'userInfo', 'form'));
+    }
+
+    //Affiche la page du jeu Snake
+    public function snakePage()
+    {
+        $title = 'Snake';
+        session_start();
+
+        \Renderer::render('views/snake', compact('title'));
     }
 
     // Déconnexion
