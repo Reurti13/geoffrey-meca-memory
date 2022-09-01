@@ -1,11 +1,18 @@
-const GAME_SIZE = 600;
+const GAME_SIZE   = 600;
 const SQUARE_SIZE = 20;
-const canvas = document.getElementById('game');
-const ctx = canvas.getContext('2d');
+const canvas      = document.getElementById('game');
+const divScore    = document.getElementById("score");
+const inputScore  = document.querySelectorAll("input")[1];
+const divPanel    = document.querySelector("#panel");
+const formResult  = document.querySelector("#result");
+const ctx         = canvas.getContext('2d');
 
 const snake = new Snake(SQUARE_SIZE);
-const food = new Food();
+const food  = new Food();
+
 let currentDirection = 'right';
+let score = 0;
+let speed = 300;
 
 function detectKeyPressed(){
     document.addEventListener('keydown', function(event){
@@ -37,13 +44,19 @@ function clearScreen() {
 function rejouer(){
     location.reload();
 }
+function gameOver(){
+    divPanel.classList.add('visually-hidden')
+    formResult.classList.remove('visually-hidden')
+    inputScore.value = score
+}
 
 function update() {
     clearScreen();
     food.draw();
     snake.update();
     if (snake.alive){
-       setTimeout(update, 100); 
+       setTimeout(update, speed); 
+       divScore.innerHTML = score
     }
 }
 

@@ -1,5 +1,5 @@
 <h1>Difficulté</h1>
-<div class="carte_acces">
+<div class="carte">
 
     <a href="./index.php?controller=ControlApp&task=memoryPage&difficult=facile">Facile</a> -
 

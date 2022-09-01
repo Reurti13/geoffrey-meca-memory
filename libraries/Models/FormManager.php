@@ -74,7 +74,6 @@ class FormManager extends Manager
             $newPoint = intval(htmlspecialchars($_POST['point']));
             $score    = intval($score);
             $point    = intval($point);
-
             $points   = $point + $newPoint;
 
             if ($_GET['difficult'] == 'facile') {
@@ -92,13 +91,27 @@ class FormManager extends Manager
                 $insertScore = $bdd->prepare("UPDATE scores SET $scoreTable = ?, points = ? WHERE id_users = ?");
                 $insertScore->execute(array($newScore, $points, $idUser));
 
-                \Http::redirect('./index.php?controller=ControlApp&task=difficultPage');
-            } else if ($points > $point) {
+                \Http::redirect('./index.php?controller=ControlApp&task=gamesPage');
+            } else {
 
                 $insertScore = $bdd->prepare("UPDATE scores SET points = ? WHERE id_users = ?");
-                $insertScore->execute(array($idUser, $points));
-                \Http::redirect('./index.php?controller=ControlApp&task=difficultPage');
+                $insertScore->execute(array($points, $idUser));
+                \Http::redirect('./index.php?controller=ControlApp&task=gamesPage');
             }
+        }
+    }
+    public function updatePoint($idUser, $point)
+    {
+        if (isset($_POST['envoyer']) and !empty($_POST['point'])) {
+
+            $bdd = $this->getPdo();
+            $newPoint = intval(htmlspecialchars($_POST['point']));
+            $point    = intval($point);
+            $points   = $point + $newPoint;
+
+            $insertScore = $bdd->prepare("UPDATE scores SET points = ? WHERE id_users = ?");
+            $insertScore->execute(array($points, $idUser));
+            \Http::redirect('./index.php?controller=ControlApp&task=gamesPage');
         }
     }
 

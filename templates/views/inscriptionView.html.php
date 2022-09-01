@@ -1,4 +1,4 @@
-<p class="text-center">Avant de commencer inscrivez-vous ou connectez-vous !</p>
+<h1>Avant de commencer inscrivez-vous ou connectez-vous !</h1>
 <div class="form-login">
     <form action="#" method="post">
         <table>
@@ -44,6 +44,6 @@
     </form>
 </div>
 
-<p class="text-center"><a href="./index.php?controller=ControlApp&task=loginPage" style="color:black;">Se connecter</a></p>
+<p class="text-center"><a href="./index.php?controller=ControlApp&task=loginPage">Se connecter</a></p>
 
 </main>

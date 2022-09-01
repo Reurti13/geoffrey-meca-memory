@@ -149,9 +149,6 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX FIN RESET XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 /*********************************************Pour le header */
 
-/*Font*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
-
 /*variable*/
 :root {
   --font-size: 1em;
@@ -192,7 +189,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX FIN RESET XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 .navbar_link > a {
   text-decoration: none;
   color: var(--navbar-color);
-  font-family: "Poppins", sans-serif;
+  font-family: "Bangers", sans-serif;
   font-size: 1.8em;
 }
 .navbar_logo {
@@ -223,12 +220,14 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX FIN RESET XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
   text-align: center;
 }
 /*********************************Pour le corp et le blog */
+
 body {
   font-size: var(--font-size);
   display: flex;
   flex-direction: column;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Bangers', cursif;
   overflow: hidden;
+
 }
 main {
   overflow: auto;
@@ -237,9 +236,9 @@ main {
 }
 h1 {
   text-align: center;
-  max-width: 60%;
   font-size: 4vw;
-  margin: 5% auto;
+  padding-top: 6%;
+  color: rgb(227, 227, 28);
 }
 h2 {
   font-size: 3vw;
@@ -254,11 +253,20 @@ h3 {
   font-size: 2em;
 }
 a {
-  font-size: 2vw;
+  font-size: 3vw;
   margin: 3px;
+  /* color: rgb(85, 25, 85); */
+  color: green;
+
+}
+a:hover{
+  transition: transform 0.5s;
+  transform: scale(1.1);
 }
 p {
-  font-size: 2vw;
+  font-size: 3vw;
+  color: rgb(85, 25, 85);
+  margin: 1%;
 }
 .carte_acces {
   text-align: center;
@@ -267,6 +275,19 @@ p {
   width: 80%;
   padding-top: 3%;
   padding-bottom: 3%;
+}
+.carte{
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 3%;
+  padding: 3%;
+  text-align: center;
+  border: rgb(0, 0, 0) solid 3px;
+  background-color: aliceblue;
+}
+.carte a:hover {
+  transition: transform 0.5s;
+  transform: scale(1.05);
 }
 .msgerreur {
   margin: 0 auto;
@@ -293,6 +314,35 @@ p {
   transition: transform 0.5s;
   transform: scale(1.2);
 }
+.text-center{
+  text-align: center;
+}
+.container {
+  display: flex;
+  height: 80%;
+  width: 90%;
+  margin: auto;
+}
+.gauche{
+  flex: 2;
+  padding-top: 5%;
+  padding-left: 5%;
+}
+.droite{
+  flex: 2;
+  padding-top: 10%;
+}
+.droite, .gauche{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.gauche > img {
+  margin: 0 auto;
+}
+.visually-hidden{
+  visibility: hidden;
+}
 /*----------------------------------------ACCUEIL---------------------------------------------*/
 .accueil{
   background: no-repeat url("../pictures/Backgrounds/prairie3.jpg");
@@ -300,7 +350,7 @@ p {
   background-position: center;
 }
 .standby{
-  background: no-repeat url("../pictures/Backgrounds/prairieFokemon.jpg");
+  background: no-repeat url("../pictures/Backgrounds/arene-pokemon.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -867,12 +917,6 @@ p {
 }
 /*XXXXXXXXXXXXXXXXXXXXXXXXXXXX BIRDS XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 
-.container {
-  position: relative;
-  display: flex;
-  min-height: 0rem;
-  background-blend-mode: soft-light;
-}
 .bird {
   background-image: url(../pictures/bird.svg);
   background-size: auto 100%;
@@ -1106,6 +1150,7 @@ select {
 }
 button {
   font-size: 2vw;
+  margin-top: 2%;
 }
 table {
   margin: 0 auto;
@@ -1139,14 +1184,23 @@ form input:hover {
   justify-content: space-around;
 }
 .game{
-  display: block;
-  width: auto;
+  margin-top: 6%;
+}
+.score{
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 3%;
+  border-right: 1px #000 solid;
+  border-left: 1px #000 solid;
 }
 .resultat{
   width: 25%;
+  border-right: 1px #000 solid;
+
 }
 .info{
   width: 25%;
+  border-left: 1px #000 solid;
 }
 .pokeball{
   width: 6vw;
@@ -1164,7 +1218,7 @@ form input:hover {
   text-decoration: underline;
 }
 #game{
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.771);
 }
 .canvas{
   margin: 0;

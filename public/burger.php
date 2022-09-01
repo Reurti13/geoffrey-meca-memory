@@ -14,8 +14,8 @@
 
     <ul class="navbar_links">
       <li class="navbar_link un"> <a href="./index.php">Accueil</a></li>
-      <li class="navbar_link deux"> <a href="./index.php?controller=ControlApp&task=loginPage">connexion</a></li>
-      <li class="navbar_link trois"> <a href="./index.php?controller=ControlApp&task=inscriptionPage">Inscription</a></li>
+      <li class="navbar_link deux"> <a href="./index.php?controller=ControlApp&task=loginPage">Connexion</a></li>
+      <li class="navbar_link trois"> <a href="./index.php?controller=ControlApp&task=gamesPage">Jeux</a></li>
       <li class="navbar_link quatre"><a href="./index.php?controller=ControlUser&task=homePage">Mon Espace</a></li>
     </ul>
 

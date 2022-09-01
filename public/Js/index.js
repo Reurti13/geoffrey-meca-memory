@@ -9,14 +9,6 @@ function toggleMenu()
 }
 toggleMenu();
 
-/***************************************************DATE/HEURE********************************** */ 
-
-// let d         = new Date();
-// let date      = d.getDate()+'-'+(d.getMonth()+1)+'-'+d.getFullYear();
-// let hours     = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-// let fullDate  = date+' '+hours;
-// const divDate = document.querySelector("#date").innerHTML = fullDate;
-
 /***************************************************BACKGROUNDS********************************** */ 
 
 let $_GET = [];
@@ -33,7 +25,7 @@ for (let i = 0; i < parts.length; i++) {
     if(temp[1] == undefined){
         main.classList.add('accueil')
     }
-    else if(temp[1] == 'memoryPage'){
+    else if(temp[1] == 'memoryPage' || 'snakePage'){
         main.classList.add('arene')
     }
     else {
@@ -464,8 +456,7 @@ for (let i = 0; i < parts.length; i++) {
                         premierClick = [ligne,colone];
 
                         if(nbPairesTrouvees==10){
-                            divPanel.classList.add('visually-hidden')
-                            formResult.classList.remove('visually-hidden')
+                            gameOver()
                             inputScore.value = nbEssai
                             inputPoint.value = nbPoints
                         }
@@ -512,6 +503,10 @@ for (let i = 0; i < parts.length; i++) {
             }
             divCount.innerHTML = nbEssai;
             divPoint.innerHTML = nbPoints;
+        }
+        function gameOver(){
+            divPanel.classList.add('visually-hidden')
+            formResult.classList.remove('visually-hidden')
         }
 
         function rejouer(){

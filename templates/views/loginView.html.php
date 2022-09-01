@@ -1,4 +1,4 @@
-<p class="text-center">Avant de jouer, Connectez vous !</p>
+<h1>Avant de jouer, Connectez vous !</h1>
 
 <div class="form-login">
     <form action="#" method="post">

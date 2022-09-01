@@ -86,8 +86,13 @@ class ControlApp
     {
         $title = 'Games';
         session_start();
+        @$idUser    = $_SESSION['id'];
 
-        \Renderer::render('views/gamesView', compact('title'));
+        $manager   = new UserManager();
+        $usersList = $manager->findAll('points ASC');
+
+
+        \Renderer::render('views/gamesView', compact('title', 'usersList'));
     }
 
     // Affiche la Page du jeu Memory
@@ -128,8 +133,6 @@ class ControlApp
             }
         }
 
-
-
         \Renderer::render('views/memory', compact('title', 'usersList', 'userInfo', 'form'));
     }
 
@@ -138,8 +141,17 @@ class ControlApp
     {
         $title = 'Snake';
         session_start();
+        $idUser        = $_SESSION['id'];
+        $form          = new Form();
+        $manager       = new UserManager();
+        $formManager   = new FormManager($_POST);
+        $usersList     = $manager->findAll('points ASC');
+        @$userInfo     = $manager->reqUserById($idUser);
+        @$reqScoreUser = $formManager->selectScore($idUser);
+        @$pointUser    = $reqScoreUser['points'];
+        $formManager->updatePoint($idUser, $pointUser);
 
-        \Renderer::render('views/snake', compact('title'));
+        \Renderer::render('views/snake', compact('title', 'form', 'userInfo', 'usersList'));
     }
 
     // Déconnexion

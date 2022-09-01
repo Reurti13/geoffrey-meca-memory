@@ -63,6 +63,8 @@ class Snake {
             food.setRandomPosition();
             const {x, y} = this.calculateNawBlockPosition();
             this.addBlock(x, y);
+            score += 5;
+            speed -= 10;
         }
     }
 
@@ -83,6 +85,7 @@ class Snake {
                 block.setPosition(oldX, oldY);
                 if (this.blockTouchHead(block)){
                     this.alive = false;
+                    gameOver()
                 }
             }
 

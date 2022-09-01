@@ -15,27 +15,14 @@ class ControlUser extends Controller
     {
         $title = 'Home';
         session_start();
-        $idUser      = $_SESSION['id'];
-        $userManager = $this->model;
-        $userInfo    = $userManager->reqUserById($idUser);
-
-        \Renderer::render('views/homeView', compact('title', 'userInfo'));
-    }
-
-    // Affiche la Page Mes infos
-    public function readUser()
-    {
-        $title = "Mes Infos";
-        session_start();
-
-        $idUser      = $_SESSION['id'];
+        @$idUser      = $_SESSION['id'];
         $userManager = $this->model;
         $manager     = new FormManager();
-
-        @$userInfo   = $userManager->reqUserById($idUser);
+        $userInfo    = $userManager->reqUserById($idUser);
         $scoreUser   = $manager->selectScore($idUser);
 
-        \Renderer::render('views/readUserView', compact('title', 'userInfo', 'scoreUser'));
+
+        \Renderer::render('views/homeView', compact('title', 'userInfo', 'scoreUser'));
     }
 
     // Affiche la Page Mon profil

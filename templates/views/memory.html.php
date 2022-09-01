@@ -5,9 +5,9 @@
         <?php foreach ($usersList as $user) {
 
             if (!empty($user['avatar'])) { ?>
-                <img src="./public/pictures/avatar/<?= $user['avatar'] ?>" width="30px" />
+                <img src="./public/pictures/avatar/<?= $user['avatar'] ?>" width="70px" />
             <?php   } elseif (empty($avatar)) { ?>
-                <img src=" ./public/pictures/avatar/neutre.jpg" width="30px" />
+                <img src=" ./public/pictures/avatar/neutre.jpg" width="70px" />
         <?php   }
 
 
@@ -22,12 +22,12 @@
 
     </div>
 
-    <div class="container text-center game">
+    <div class="text-center game">
         <div id="jeu"></div>
-        <button class='text-center btn btn-success mt-5' style='width:100px; height:100px;' onclick='rejouer()'>Rejouer</button>
+        <button class='text-center button' onclick='rejouer()'>Rejouer</button>
     </div>
 
-    <div class="info text-center mt-3">
+    <div class="info text-center">
         <p>Vous en êtes à <span id="count"></span> coups !</p>
         <p>Votre score est de : <span id="point"></span> points</p>
     </div>
