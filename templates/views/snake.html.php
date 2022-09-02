@@ -26,6 +26,13 @@
         <p>SCORE = <span id="score"></span> points</p>
     </div>
 </div>
+<div class="fleche text-center">
+    <button class="flecheUP" onclick="detectTouch('ArrowUp')"></button>
+    <button class="flecheRight" onclick="detectTouch('ArrowRight')"></button>
+    <button class="flecheLeft" onclick="detectTouch('ArrowLeft')"></button>
+    <button class="flecheDown" onclick="detectTouch('ArrowDown')"></button>
+
+</div>
 
 <form id="result" class="text-center visually-hidden" action="" method="POST">
     <p>GAME OVER</p></br>

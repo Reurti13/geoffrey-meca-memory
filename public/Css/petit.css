@@ -108,6 +108,9 @@
 html{
     overflow: auto;
 }
+h1{
+    font-size: 8vw;
+}
 h2{
     font-size: 7vw;
     text-align: center;
@@ -117,7 +120,7 @@ h3{
     font-size:5vw;
 }
 a{
-    font-size: 5vw;
+    font-size: 10vw;
 }
 p{
     font-size: 8vw;
@@ -127,6 +130,18 @@ p{
 .date{
     font-size: 4vw;
     padding-right: 7%;
+}
+.container{
+    display: block;
+}
+.gauche > img{
+    width: 200px;
+}
+.carte{
+    width: 80%;
+}
+.score{
+    width: 90%;
 }
 /*----------------------------------------ACCUEIL---------------------------------------------*/
 .eclair{
@@ -198,11 +213,14 @@ p{
 .formCreation{
     width: 95%;
 }
-.form-edit, .form-login{
+.form-edit, .form-login, .form{
     width: 95%;
 }
-.form-login button, .form-edit button{
-    font-size: 5vw;
+.form-edit input, .form-login input{
+    font-size: 6vw;
+}
+.form-login button, .form-edit button, .form button{
+    font-size: 8vw;
 }
 form{
     font-size: 8vw;
@@ -215,8 +233,8 @@ form p{
     width: 100%;
     font-size: 6vw;
 }
-input, textarea{
-    font-size: 6vw;
+input{
+    font-size: 3.8vw;
 }
 td{
     text-align: center;
@@ -224,14 +242,18 @@ td{
 button{
     font-size: 5vw;
 }
-/*-----------------------------------PERSO------------------------------------------------------*/
-.conteneurPerso a{
-    font-size: 4vw;
-}
-.listepersonnage { /* class pour la liste du choix des personnages (createPersoPage)*/
-    width: 35%;
-}
 /*-----------------------------------JEUX------------------------------------------------------*/
+.affichageJeu{
+    display: block;
+}
+.info{
+    width: 100%;
+    position: absolute;
+    top: 85px;
+}
+.resultat{
+    display: none;
+}
 .pokeball{
     width: 20vw;
     height: 20vw;
@@ -240,20 +262,44 @@ button{
     width: 20vw;
     height: 20vw;
 }
-/*-----------------------------------BLOG------------------------------------------------------*/
-.news p{
-    font-size: 5vw;
+.canvas{
+    margin-top: 15%;
 }
-.news h3{
-    font-size:5vw;
+#game{
+    width: 90%;
 }
-.liste-comm{
+.fleche{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+  
+    width: 200px;
+    height: 200px;
     margin: 0 auto;
-    width: 80%;
-}
-.scroll{
-    top:10%;
-}
+   }
+  .flecheUP, .flecheDown, .flecheRight, .flecheLeft{
+    width: 50px;
+    height: 50px;
+  }
+  .flecheUP{
+    background: no-repeat center/160% url("../pictures/flecheUp.jpg");
+    grid-column-start: 2;
+  }
+  .flecheDown{
+    background: no-repeat center/160% url("../pictures/flecheDown.jpg");
+    grid-column-start: 2;
+    grid-row-start: 3;
+  }
+  .flecheRight{
+    background: no-repeat center/160% url("../pictures/flecheRight.jpg");
+    grid-column-start: 3;
+    grid-row-start: 2;
+  }
+  .flecheLeft{
+    background: no-repeat center/160% url("../pictures/flecheLeft.jpg");
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
 /***********************************FOOTER**************************/
 footer{
     font-size: 1.2vw;

@@ -25,7 +25,10 @@ for (let i = 0; i < parts.length; i++) {
     if(temp[1] == undefined){
         main.classList.add('accueil')
     }
-    else if(temp[1] == 'memoryPage' || 'snakePage'){
+    else if(temp[1] == 'memoryPage'){
+        main.classList.add('arene')
+    }
+    else if(temp[1] == 'snakePage'){
         main.classList.add('arene')
     }
     else {

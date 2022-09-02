@@ -227,7 +227,6 @@ body {
   flex-direction: column;
   font-family: 'Bangers', cursif;
   overflow: hidden;
-
 }
 main {
   overflow: auto;
@@ -249,13 +248,9 @@ h2 {
   color: rgb(0, 0, 0);
   padding: 2%;
 }
-h3 {
-  font-size: 2em;
-}
 a {
   font-size: 3vw;
   margin: 3px;
-  /* color: rgb(85, 25, 85); */
   color: green;
 
 }
@@ -266,7 +261,6 @@ a:hover{
 p {
   font-size: 3vw;
   color: rgb(85, 25, 85);
-  margin: 1%;
 }
 .carte_acces {
   text-align: center;
@@ -285,7 +279,7 @@ p {
   border: rgb(0, 0, 0) solid 3px;
   background-color: aliceblue;
 }
-.carte a:hover {
+.carte > a:hover {
   transition: transform 0.5s;
   transform: scale(1.05);
 }
@@ -319,7 +313,6 @@ p {
 }
 .container {
   display: flex;
-  height: 80%;
   width: 90%;
   margin: auto;
 }
@@ -341,7 +334,7 @@ p {
   margin: 0 auto;
 }
 .visually-hidden{
-  visibility: hidden;
+  display: none !important;
 }
 /*----------------------------------------ACCUEIL---------------------------------------------*/
 .accueil{
@@ -1116,7 +1109,7 @@ p {
 .formCreation td {
   text-align: center;
 }
-.form-edit,
+.form-edit, .form,
 .form-login {
   text-align: center;
   margin: 0 auto;
@@ -1125,7 +1118,7 @@ p {
 .form-edit p {
   text-align: center;
 }
-.form-login button,
+.form-login button, .form button,
 .form-edit button {
   font-size: 2vw;
   margin-top: 3%;
@@ -1224,11 +1217,14 @@ form input:hover {
   margin: 0;
   padding: 0;
   display: flex;
-  height: 40vw;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+.fleche{
+  display: none;
+}
+
 /*------------------------------------Pour le footer-----------------------*/
 footer {
   color: var(--navbar-color);

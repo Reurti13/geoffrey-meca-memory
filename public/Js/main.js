@@ -36,6 +36,26 @@ function detectKeyPressed(){
 
     });
 }
+function detectTouch(arrow){
+    
+        switch (arrow) {
+            case 'ArrowLeft':
+                currentDirection = 'left';
+                break;
+            case 'ArrowRight':
+                currentDirection = 'right';
+                break;
+            case 'ArrowUp':
+                currentDirection = 'up';
+                break;
+            case 'ArrowDown':
+                currentDirection = 'down';
+                break;
+        
+            default:
+                break;
+        }
+}
 
 function clearScreen() {
     ctx.clearRect(0, 0, GAME_SIZE, GAME_SIZE);

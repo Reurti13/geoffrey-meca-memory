@@ -61,7 +61,7 @@ class Form
     public function inputAvatar($label, $name, $value)
     {
         return $this->surround(
-            '<label for="' . $label . '"><strong>' . $label . ' : </strong></label><input type="file" name="' . $name . '" value="' . $value . '">'
+            '<label for="' . $label . '"><strong>' . $label . '</strong></label> : <input type="file" name="' . $name . '" value="' . $value . '">'
         );
     }
 

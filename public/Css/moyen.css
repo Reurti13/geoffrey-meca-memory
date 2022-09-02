@@ -100,6 +100,55 @@ form button{
     width: 12vw;
     height: 12vw;
 }
+.canvas{
+    margin-top: 15%;
+}
+#game{
+    width: 90%;
+}
+.affichageJeu{
+    display: block;
+}
+.info{
+    width: 100%;
+    position: absolute;
+    top: 85px;
+}
+.resultat{
+    display: none;
+}
+.fleche{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+  
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+   }
+  .flecheUP, .flecheDown, .flecheRight, .flecheLeft{
+    width: 50px;
+    height: 50px;
+  }
+  .flecheUP{
+    background: no-repeat center/160% url("../pictures/flecheUp.jpg");
+    grid-column-start: 2;
+  }
+  .flecheDown{
+    background: no-repeat center/160% url("../pictures/flecheDown.jpg");
+    grid-column-start: 2;
+    grid-row-start: 3;
+  }
+  .flecheRight{
+    background: no-repeat center/160% url("../pictures/flecheRight.jpg");
+    grid-column-start: 3;
+    grid-row-start: 2;
+  }
+  .flecheLeft{
+    background: no-repeat center/160% url("../pictures/flecheLeft.jpg");
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
 /***********************************FOOTER**************************/
 footer{
     font-size: 1.1vw;
